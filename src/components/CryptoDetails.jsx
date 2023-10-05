@@ -17,9 +17,9 @@ const CryptoDetails = () => {
     const { coinId } = useParams();
     const [timePeriod, setTimePeriod] = useState('7d')
     const { data, isFetching } = useGetCryptosDetailsQuery(coinId)
-    const { data: coinHistory } = useGetCryptosDetailsQuery({coinId, timePeriod})
+    const { data: coinHistory } = useGetCryptosHistoryQuery({coinId, timePeriod})
     const cryptoDetails = data?.data?.coin
-    console.log(data)
+    console.log(coinHistory)
 
     if(isFetching) return 'Loading....'
 
